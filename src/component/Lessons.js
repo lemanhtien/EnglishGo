@@ -27,7 +27,7 @@ export default class Lessons extends Component {
   
   renderPage1() {
     return (
-      <View style={{overflow: 'visible', paddingLeft: 5}}>
+      <View style={{overflow: 'visible', paddingLeft: 7}}>
         <View style={{height: '45%', flexDirection: 'row', justifyContent: 'space-between', width: '100%'}}>
           <Image
             style={styles.buttonContainer}
@@ -82,7 +82,7 @@ export default class Lessons extends Component {
   
   renderPage2() {
     return (
-      <View style={{overflow: 'visible', paddingLeft: 5}}>
+      <View style={{overflow: 'visible', paddingLeft: 7}}>
         <View style={{height: '45%', flexDirection: 'row', justifyContent: 'space-between', width: '100%'}}>
           <Image
             style={styles.buttonContainer}
