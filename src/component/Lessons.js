@@ -54,7 +54,7 @@ export default class Lessons extends Component {
           height: '50%',
           flexDirection: 'row',
           justifyContent: 'space-between',
-          width: '102%', marginLeft: 2, paddingLeft: 10, paddingRight: 10}}>
+          width: '100%', marginLeft: 2, paddingLeft: 8, paddingRight: 8}}>
           <Image
             style={styles.buttonContainer}
             source={require('../images/button-level-lessons.png')}>
@@ -109,7 +109,7 @@ export default class Lessons extends Component {
           height: '50%',
           flexDirection: 'row',
           justifyContent: 'space-between',
-          width: '102%', marginLeft: 2, paddingLeft: 10, paddingRight: 10}}>
+          width: '100%', marginLeft: 2, paddingLeft: 8, paddingRight: 8}}>
           <Image
             style={styles.buttonContainer}
             source={require('../images/button-level-lessons.png')}>
