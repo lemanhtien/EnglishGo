@@ -162,7 +162,7 @@ export default class LessonDetail extends Component {
     return(
       <View style={{height: '100%', width: '100%', alignItems: 'center', justifyContent: 'center'}}>
         <TouchableOpacity
-          style={{position: 'absolute', top: 20, width: 100, zIndex: 10}}
+          style={{position: 'absolute', top: 20, zIndex: 10}}
           onPress={() => this.props.navigation.navigate('Lessons')}>
           <Image
             style={{}}
