@@ -14,6 +14,7 @@ import {
 import { StackNavigator } from 'react-navigation';
 import Lessons from './component/Lessons';
 import Exams from './component/Exams';
+import LessonTitle from './component/LessonTitle'
 // const store = createStore();
 const { width, height } = Dimensions.get("window");
 
@@ -54,6 +55,7 @@ const EnglishGo = StackNavigator({
   Home: { screen: HomeScreen },
   Lessons: { screen: Lessons },
   Exams: { screen: Exams },
+  LessonTitle: {screen: LessonTitle}
 });
 const styles = StyleSheet.create({
   container:{

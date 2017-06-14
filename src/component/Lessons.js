@@ -29,52 +29,84 @@ export default class Lessons extends Component {
     return (
       <View style={{overflow: 'visible', paddingLeft: 7}}>
         <View style={{height: '45%', flexDirection: 'row', justifyContent: 'space-between', width: '100%'}}>
-          <Image
+          <TouchableOpacity
             style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>1</Text>
-          </Image>
-          <Image
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '1'})}>
+            <Image
+              style={{}}
+              source={require('../images/button-level-lessons.png')}>
+              <Text style={styles.textLesson}>1</Text>
+            </Image>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>2</Text>
-          </Image>
-          <Image
+            onPress={() => this.props.navigation.goBack()}>
+            <Image
+              style={{}}
+              source={require('../images/button-level-lessons.png')}>
+              <Text style={styles.textLesson}>2</Text>
+            </Image>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>3</Text>
-          </Image>
-          <Image
+            onPress={() => this.props.navigation.goBack()}>
+            <Image
+              style={{}}
+              source={require('../images/button-level-lessons.png')}>
+              <Text style={styles.textLesson}>3</Text>
+            </Image>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>4</Text>
-          </Image>
+            onPress={() => this.props.navigation.goBack()}>
+            <Image
+              style={{}}
+              source={require('../images/button-level-lessons.png')}>
+              <Text style={styles.textLesson}>4</Text>
+            </Image>
+          </TouchableOpacity>
         </View>
         <View style={{
           height: '50%',
           flexDirection: 'row',
           justifyContent: 'space-between',
           width: '100%', marginLeft: 2, paddingLeft: 8, paddingRight: 8}}>
-          <Image
+          <TouchableOpacity
             style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>5</Text>
-          </Image>
-          <Image
+            onPress={() => this.props.navigation.goBack()}>
+            <Image
+              style={{}}
+              source={require('../images/button-level-lessons.png')}>
+              <Text style={styles.textLesson}>5</Text>
+            </Image>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>6</Text>
-          </Image>
-          <Image
+            onPress={() => this.props.navigation.goBack()}>
+            <Image
+              style={{}}
+              source={require('../images/button-level-lessons.png')}>
+              <Text style={styles.textLesson}>6</Text>
+            </Image>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>7</Text>
-          </Image>
-          <Image
+            onPress={() => this.props.navigation.goBack()}>
+            <Image
+              style={{}}
+              source={require('../images/button-level-lessons.png')}>
+              <Text style={styles.textLesson}>7</Text>
+            </Image>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>8</Text>
-          </Image>
+            onPress={() => this.props.navigation.goBack()}>
+            <Image
+              style={{}}
+              source={require('../images/button-level-lessons.png')}>
+              <Text style={styles.textLesson}>8</Text>
+            </Image>
+          </TouchableOpacity>
         </View>
       </View>
     )
@@ -84,52 +116,38 @@ export default class Lessons extends Component {
     return (
       <View style={{overflow: 'visible', paddingLeft: 7}}>
         <View style={{height: '45%', flexDirection: 'row', justifyContent: 'space-between', width: '100%'}}>
-          <Image
+          <TouchableOpacity
             style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>9</Text>
-          </Image>
-          <Image
+            onPress={() => this.props.navigation.goBack()}>
+            <Image
+              style={{}}
+              source={require('../images/button-level-lessons.png')}>
+              <Text style={styles.textLesson}>9</Text>
+            </Image>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>10</Text>
-          </Image>
-          <Image
+            onPress={() => this.props.navigation.goBack()}>
+            <Image
+              style={{}}
+              source={require('../images/button-level-lessons.png')}>
+              <Text style={styles.textLesson}>10</Text>
+            </Image>
+          </TouchableOpacity>
+          <View
             style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>11</Text>
-          </Image>
-          <Image
+            onPress={() => this.props.navigation.goBack()}>
+            <View
+              style={{width: 65}}>
+            </View>
+          </View>
+          <View
             style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>12</Text>
-          </Image>
-        </View>
-        <View style={{
-          height: '50%',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          width: '100%', marginLeft: 2, paddingLeft: 8, paddingRight: 8}}>
-          <Image
-            style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>13</Text>
-          </Image>
-          <Image
-            style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>14</Text>
-          </Image>
-          <Image
-            style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>15</Text>
-          </Image>
-          <Image
-            style={styles.buttonContainer}
-            source={require('../images/button-level-lessons.png')}>
-            <Text style={styles.textLesson}>16</Text>
-          </Image>
+            onPress={() => this.props.navigation.goBack()}>
+            <View
+              style={{width: 65}}>
+            </View>
+          </View>
         </View>
       </View>
     )
@@ -140,37 +158,37 @@ export default class Lessons extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View>
-      <Image
-          style={styles.background}
-          source={require('../images/background.png')}>
-        <View style={styles.wrapper}>
-          <View style={styles.starTopContainer}>
-            <Image source={require('../images/lesson-logo.png')}/>
+        <Image
+            style={styles.background}
+            source={require('../images/background.png')}>
+          <View style={styles.wrapper}>
+            <View style={styles.starTopContainer}>
+              <Image source={require('../images/lesson-logo.png')}/>
+            </View>
+            <Image
+            style={styles.lessonContainer}
+            source={require('../images/menu-lessons.png')}>
+              <View style={{height: '75%', overflow: 'visible'}}>
+                <ScrollableTabView
+                  style={{overflow: 'visible', flex: 1}}
+                  renderTabBar={() => <View/>}>
+                  {this.renderPage1()}
+                  {this.renderPage2()}
+                </ScrollableTabView>
+              </View>
+              <View style={{height: '20%', marginLeft: 10}}>
+                <TouchableOpacity
+                  style={{height: '100%', width: '30%'}}
+                  onPress={() => this.props.navigation.goBack()}>
+                  <Image
+                    style={{}}
+                    source={require('../images/button-home.png')}/>
+                </TouchableOpacity>
+              </View>
+            </Image>
+  
           </View>
-          <Image
-          style={styles.lessonContainer}
-          source={require('../images/menu-lessons.png')}>
-            <View style={{height: '75%', overflow: 'visible'}}>
-              <ScrollableTabView
-                style={{overflow: 'visible', flex: 1}}
-                renderTabBar={() => <View/>}>
-                {this.renderPage1()}
-                {this.renderPage2()}
-              </ScrollableTabView>
-            </View>
-            <View style={{height: '20%', marginLeft: 10}}>
-              <TouchableOpacity
-                style={{height: '100%', width: '30%'}}
-                onPress={() => this.props.navigation.goBack()}>
-                <Image
-                  style={{}}
-                  source={require('../images/button-home.png')}/>
-              </TouchableOpacity>
-            </View>
-          </Image>
-
-        </View>
-      </Image>
+        </Image>
       </View>
     );
   }
