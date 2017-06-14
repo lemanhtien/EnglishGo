@@ -29,7 +29,7 @@ export default class LessonTitle extends Component {
   
   componentDidMount() {
     let passedProps = this.props.navigation.state.params
-    console.log(images[passedProps.lesson][1])
+    this.props.navigation.navigate('LessonDetail', {lesson: passedProps.lesson})
   }
   
   render() {

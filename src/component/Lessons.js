@@ -40,7 +40,7 @@ export default class Lessons extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.goBack()}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '2'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -49,7 +49,7 @@ export default class Lessons extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.goBack()}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '3'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -58,7 +58,7 @@ export default class Lessons extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.goBack()}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '4'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -73,7 +73,7 @@ export default class Lessons extends Component {
           width: '100%', marginLeft: 2, paddingLeft: 8, paddingRight: 8}}>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.goBack()}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '5'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -82,7 +82,7 @@ export default class Lessons extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.goBack()}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '6'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -91,7 +91,7 @@ export default class Lessons extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.goBack()}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '7'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -100,7 +100,7 @@ export default class Lessons extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.goBack()}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '8'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -118,7 +118,7 @@ export default class Lessons extends Component {
         <View style={{height: '45%', flexDirection: 'row', justifyContent: 'space-between', width: '100%'}}>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.goBack()}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '9'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -127,7 +127,7 @@ export default class Lessons extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.goBack()}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '10'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -136,14 +136,14 @@ export default class Lessons extends Component {
           </TouchableOpacity>
           <View
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.goBack()}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '11'})}>
             <View
               style={{width: 65}}>
             </View>
           </View>
           <View
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.goBack()}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '12'})}>
             <View
               style={{width: 65}}>
             </View>
