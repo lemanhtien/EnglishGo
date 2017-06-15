@@ -14,6 +14,7 @@ import {
   TouchableOpacity,
   ScrollView
 } from 'react-native';
+import Tts from 'react-native-tts'
 import { StackNavigator,NavigationActions } from 'react-navigation';
 import HomeScreen from '../App';
 import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view';
@@ -68,13 +69,11 @@ export default class LessonDetail extends Component {
   }
   
   componentWillMount() {
-    let passedProps = this.props.navigation.state.params
-    console.log(passedProps.lesson)
-    let lesson = passedProps.lesson
+    let lesson = this.props.lesson
     let lessonTitle = null
     switch (lesson) {
       case '1':
-        lessonTitle = 'airplane'
+        lessonTitle = 'air plane'
         break
       case '2':
         lessonTitle = 'apple'
@@ -114,6 +113,7 @@ export default class LessonDetail extends Component {
       thirdPage: thirdPage,
       title: lessonTitle
     })
+    setTimeout(() => {Tts.speak(lessonTitle)}, 500)
     //console.log(images[passedProps.lesson][1])
   }
   
@@ -128,13 +128,16 @@ export default class LessonDetail extends Component {
   }
   
   renderPage1() {
-    let passedProps = this.props.navigation.state.params
     return(
-      <View style={{height: '100%', width: '100%', alignItems: 'center', justifyContent: 'center'}}>
-        <Image
-          resizeMode="contain"
-          style={styles.background}
-          source={images[passedProps.lesson][this.state.firstPage]}/>
+      <View style={{height: '100%', alignItems: 'center', justifyContent: 'center'}}>
+        <TouchableOpacity
+          onPress={() => Tts.speak(this.state.title)}
+          style={{height: '30%', width: '100%', alignItems: 'center', justifyContent: 'center'}}>
+          <Image
+            resizeMode="contain"
+            style={styles.backgroundImage}
+            source={images[this.props.lesson][this.state.firstPage]}/>
+        </TouchableOpacity>
         <Text style={{backgroundColor: 'transparent', color: 'white',
           fontSize: 50, position: 'absolute',
           fontWeight: 'bold', bottom: 20, alignSelf: 'center'}}>{this.state.title}</Text>
@@ -143,13 +146,16 @@ export default class LessonDetail extends Component {
   }
   
   renderPage2() {
-    let passedProps = this.props.navigation.state.params
     return(
-      <View style={{height: '100%', width: '100%', alignItems: 'center', justifyContent: 'center'}}>
-        <Image
-          resizeMode="contain"
-          style={styles.background}
-          source={images[passedProps.lesson][this.state.secondPage]}/>
+      <View style={{height: '100%', alignItems: 'center', justifyContent: 'center'}}>
+        <TouchableOpacity
+          onPress={() => Tts.speak(this.state.title)}
+          style={{height: '30%', width: '100%', alignItems: 'center', justifyContent: 'center'}}>
+          <Image
+            resizeMode="contain"
+            style={styles.backgroundImage}
+            source={images[this.props.lesson][this.state.secondPage]}/>
+        </TouchableOpacity>
         <Text style={{backgroundColor: 'transparent', color: 'white',
           fontSize: 50, position: 'absolute',
           fontWeight: 'bold', bottom: 20, alignSelf: 'center'}}>{this.state.title}</Text>
@@ -158,29 +164,32 @@ export default class LessonDetail extends Component {
   }
   
   renderPage3() {
-    let passedProps = this.props.navigation.state.params
     return(
-      <View style={{height: '100%', width: '100%', alignItems: 'center', justifyContent: 'center'}}>
+      <View style={{height: '100%', alignItems: 'center', justifyContent: 'center'}}>
         <TouchableOpacity
-          style={{position: 'absolute', top: 20, zIndex: 10}}
+          style={{position: 'absolute', top: 20, zIndex: 10, right: 10, width: 30, height: 30}}
           onPress={() => this.props.navigation.navigate('Lessons')}>
           <Image
-            style={{}}
+            resizeMode="contain"
+            style={{width: 30, height: 30}}
             source={require('../images/button-home.png')}/>
         </TouchableOpacity>
-        <Image
-          resizeMode="contain"
-          style={styles.background}
-          source={images[passedProps.lesson][this.state.thirdPage]}/>
+        <TouchableOpacity
+          onPress={() => Tts.speak(this.state.title)}
+          style={{height: '30%', width: '100%', alignItems: 'center', justifyContent: 'center'}}>
+          <Image
+            resizeMode="contain"
+            style={styles.backgroundImage}
+            source={images[this.props.lesson][this.state.thirdPage]}/>
+        </TouchableOpacity>
         <Text style={{backgroundColor: 'transparent', color: 'white',
-          fontSize: 50, position: 'absolute',
-          fontWeight: 'bold', bottom: 20, alignSelf: 'center'}}>{this.state.title}</Text>
+            fontSize: 50, position: 'absolute',
+            fontWeight: 'bold', bottom: 20, alignSelf: 'center'}}>{this.state.title}</Text>
       </View>
     )
   }
   
   render() {
-    let passedProps = this.props.navigation.state.params
     return(
       <View>
         <Image
@@ -209,5 +218,10 @@ const styles = StyleSheet.create({
     height,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  backgroundImage: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: width - 20
   }
 })

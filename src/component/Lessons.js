@@ -176,10 +176,10 @@ export default class Lessons extends Component {
                   {this.renderPage2()}
                 </ScrollableTabView>
               </View>
-              <View style={{height: '20%', marginLeft: 10}}>
+              <View style={{height: '20%', alignSelf: 'center'}}>
                 <TouchableOpacity
                   style={{height: '100%', width: '30%'}}
-                  onPress={() => this.props.navigation.goBack()}>
+                  onPress={() => this.props.navigation.navigate('Home')}>
                   <Image
                     style={{}}
                     source={require('../images/button-home.png')}/>

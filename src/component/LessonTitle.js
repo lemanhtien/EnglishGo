@@ -29,7 +29,9 @@ export default class LessonTitle extends Component {
   
   componentDidMount() {
     let passedProps = this.props.navigation.state.params
-    this.props.navigation.navigate('LessonDetail', {lesson: passedProps.lesson})
+    //this.props.navigation.navigate('LessonDetail', {lesson: passedProps.lesson})
+    this.props.navigation.navigate('Multisensory', {lesson: passedProps.lesson})
+  
   }
   
   render() {
