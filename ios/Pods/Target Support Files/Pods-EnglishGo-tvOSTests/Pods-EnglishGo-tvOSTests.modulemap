@@ -1,0 +1,6 @@
+framework module Pods_EnglishGo_tvOSTests {
+  umbrella header "Pods-EnglishGo-tvOSTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
