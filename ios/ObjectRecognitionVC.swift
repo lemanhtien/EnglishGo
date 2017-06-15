@@ -52,6 +52,11 @@ enum ObjectMode {
 
 class ObjectRecognitionVC: UIViewController {
   
+  var arrayOfVocabs: [String] = [] {
+    didSet{
+      self.titleLabel.text = self.arrayOfVocabs.count > 0 ? self.arrayOfVocabs.first! : ""
+    }
+  }
   var mode: ObjectMode = .exam
   
   var session: AVCaptureSession!
@@ -487,21 +492,9 @@ class ObjectRecognitionVC: UIViewController {
             width = width / ratio
             height = height / ratio
             if strongself.mode == .exam {
-              if strongself.vocab != nil {
-                if mtname == strongself.vocab!.word.lowercased() {
-                  // SUCCESS
-                  strongself.listObjects.append(MTObject.init(name: mtname, x: mtx1, y: mty1 , width: width, height: height, accuracy: mtaccuracy))
-                  // SHOW ANIMATION
-                  if strongself.currentIndex == 0{
-                    isSuccess = true
-                  }
-                } else if mtname == "pottedplant" {
-                  strongself.listObjects.append(MTObject.init(name: mtname, x: mtx1, y: mty1 , width: width, height: height, accuracy: mtaccuracy))
-                  if strongself.currentIndex == 1{
-                    isSuccess = true
-                  }
-                } else if mtname == ""{
-                  strongself.listObjects.append(MTObject.init(name: mtname, x: mtx1, y: mty1 , width: width, height: height, accuracy: mtaccuracy))
+              if strongself.currentIndex < strongself.arrayOfVocabs.count {
+                if name == strongself.arrayOfVocabs[strongself.currentIndex] {
+                  isSuccess = true
                 }
               }
             } else {
@@ -510,10 +503,10 @@ class ObjectRecognitionVC: UIViewController {
           }
           strongself.drawObjectLabels()
           if strongself.mode == .exam && isSuccess{
-            if strongself.currentIndex == 0 {
-              strongself.currentIndex = 1
+            if strongself.currentIndex < (strongself.arrayOfVocabs.count-1) {
+              strongself.currentIndex += 1
               strongself.showCheckmarkSuccess()
-              strongself.titleLabel.text = "Find \(strongself.lesson?.vocabs[1].word.uppercased() ?? "")"
+              strongself.titleLabel.text = "Find \(strongself.arrayOfVocabs[strongself.currentIndex].uppercased())"
               return
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
