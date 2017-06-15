@@ -24,7 +24,7 @@ export default class Lessons extends Component {
     header:null,
     title: 'Lesson',
   };
-  
+
   renderPage1() {
     return (
       <View style={{overflow: 'visible', paddingLeft: 7}}>
@@ -111,7 +111,7 @@ export default class Lessons extends Component {
       </View>
     )
   }
-  
+
   renderPage2() {
     return (
       <View style={{overflow: 'visible', paddingLeft: 7}}>
@@ -152,8 +152,8 @@ export default class Lessons extends Component {
       </View>
     )
   }
-  
-  
+
+
   render() {
     const { navigate } = this.props.navigation;
     return (
@@ -186,7 +186,7 @@ export default class Lessons extends Component {
                 </TouchableOpacity>
               </View>
             </Image>
-  
+
           </View>
         </Image>
       </View>
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
     height,
   },
   wrapper: {
-    paddingTop: 20,
+    paddingTop: 50,
     padding: 10,
     backgroundColor:'transparent'
   },
