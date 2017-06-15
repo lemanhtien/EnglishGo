@@ -23,6 +23,7 @@ export default class Lessons extends Component {
   static navigationOptions = {
     header:null,
     title: 'Lesson',
+    gesturesEnabled: false
   };
 
   renderPage1() {
