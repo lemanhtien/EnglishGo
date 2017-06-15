@@ -36,6 +36,8 @@ export default class LessonTitle extends Component {
   
   render() {
     let passedProps = this.props.navigation.state.params
+    let lessonNumber = Number(passedProps.lesson)
+    lessonNumber = parseInt(lessonNumber/3) + 1
     return(
       <View>
         <Image
@@ -43,7 +45,7 @@ export default class LessonTitle extends Component {
           source={require('../images/background.png')}>
           <Text style={{backgroundColor: 'transparent', color: 'white',
           fontSize: 50,
-          fontWeight: 'bold'}}>{'Lesson ' + passedProps.lesson}</Text>
+          fontWeight: 'bold'}}>{'Lesson ' + lessonNumber.toString()}</Text>
         </Image>
       </View>
     )

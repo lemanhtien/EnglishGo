@@ -76,10 +76,10 @@ export default class LessonDetail extends Component {
         lessonTitle = 'air plane'
         break
       case '2':
-        lessonTitle = 'apple'
+        lessonTitle = 'boat'
         break
       case '3':
-        lessonTitle = 'banana'
+        lessonTitle = 'bicycle'
         break
       case '4':
         lessonTitle = 'bear'
@@ -88,7 +88,7 @@ export default class LessonDetail extends Component {
         lessonTitle = 'bird'
         break
       case '6':
-        lessonTitle = 'book'
+        lessonTitle = 'dog'
         break
       case '7':
         lessonTitle = 'bus'
@@ -97,11 +97,70 @@ export default class LessonDetail extends Component {
         lessonTitle = 'car'
         break
       case '9':
-        lessonTitle = 'cake'
+        lessonTitle = 'motorcycle'
         break
       case '10':
         lessonTitle = 'cat'
         break
+      case '11':
+        lessonTitle = 'sheep'
+        break
+      case '12':
+        lessonTitle = 'zebra'
+        break
+      case '13':
+        lessonTitle = 'boat'
+        break
+      case '14':
+        lessonTitle = 'bicycle'
+        break
+      case '15':
+        lessonTitle = 'bus'
+        break
+      case '16':
+        lessonTitle = 'elephant'
+        break
+      case '17':
+        lessonTitle = 'giraffe'
+        break
+      case '18':
+        lessonTitle = 'horse'
+        break
+      case '19':
+        lessonTitle = 'traffic light'
+        break
+      case '20':
+        lessonTitle = 'stop sign'
+        break
+      case '21':
+        lessonTitle = 'parking meter'
+        break
+      case '22':
+        lessonTitle = 'bed'
+        break
+      case '23':
+        lessonTitle = 'sink'
+        break
+      case '24':
+        lessonTitle = 'potted plant'
+        break
+      case '25':
+        lessonTitle = 'chair'
+        break
+      case '26':
+        lessonTitle = 'couch'
+        break
+      case '27':
+        lessonTitle = 'bench'
+        break
+      case '28':
+        lessonTitle = 'apple'
+        break
+      case '29':
+        lessonTitle = 'orange'
+        break
+      case '30':
+        lessonTitle = 'banana'
     }
     console.log(lessonTitle)
     let firstPage = this.randomIntFromInterval(1, 10)
