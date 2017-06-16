@@ -67,9 +67,20 @@ export default class Exams extends Component {
     console.log('aasd',randomWords[this.state.question], listWords[randomWords[this.state.question]]);
     return(
       <View style={{flex:2,marginTop:60}}>
+        <TouchableOpacity onPress={()=>{this.props.navigation.navigate('Home')}}>
+          <Image
+            style={{ marginLeft:20,}}
+            source={require('../images/button-back-small.png')}/>
+        </TouchableOpacity>
       <Text style={{backgroundColor:'transparent', textAlign:'center', fontSize:25, color:'white'}}>
-        {listWords[randomWords[this.state.question]]} ?</Text>
-        <View style={{height: '60%',flex:1, alignItems: 'center', justifyContent: 'center'}}>
+        What is {listWords[randomWords[this.state.question]]} ?</Text>
+        <View style={{borderRadius:5,shadowColor: '#000000',
+    shadowOffset: {
+      width: 3,
+      height: 3
+    },
+    shadowRadius: 2,
+    shadowOpacity: 0.2, backgroundColor:'rgba(245,166,35,0.4)',borderColor:'white', margin:10, height: '60%',flex:1, alignItems: 'center', justifyContent: 'center'}}>
           <TouchableOpacity onPress={()=>{
             let next = this.state.question +1;
             if(next>=5) {
@@ -90,13 +101,24 @@ export default class Exams extends Component {
               this.setModalVisible(false);
             }, 1500);
           }}>
+
             <Image
               resizeMode="contain"
-              style={{width:width3,height:200}}
+              style={{ width:width3,height:200}}
               source={images[randomWords[this.state.question]+1][randomImage]}/>
+              <View style={{paddingTop:10}}>
+                <Text style={{backgroundColor:'transparent', fontSize:20, color:'white', textAlign:'center'}}>
+                  This is!</Text>
+              </View>
           </TouchableOpacity>
         </View>
-        <View style={{height: '40%',flex:1, alignItems: 'center', justifyContent: 'center'}}>
+        <View style={{borderRadius:5,shadowColor: '#000000',
+    shadowOffset: {
+      width: 3,
+      height: 3
+    },
+    shadowRadius: 2,
+    shadowOpacity: 0.2, backgroundColor:'rgba(245,166,35,0.4)',borderColor:'white', margin:10, height: '40%',flex:1, alignItems: 'center', justifyContent: 'center'}}>
           <TouchableOpacity onPress={()=>{
             let next = this.state.question +1;
             if(next>=5) {
@@ -121,6 +143,10 @@ export default class Exams extends Component {
               resizeMode="contain"
               style={{width:width3,height:200}}
               source={images[randomWords[this.state.question]][randomImage]}/>
+              <View style={{paddingTop:10}}>
+                <Text style={{backgroundColor:'transparent', fontSize:20, color:'white', textAlign:'center' }}>
+                  This is!</Text>
+              </View>
           </TouchableOpacity>
         </View>
       </View>

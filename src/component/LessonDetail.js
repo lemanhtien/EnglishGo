@@ -14,6 +14,7 @@ import {
   TouchableOpacity,
   ScrollView
 } from 'react-native';
+import Tts from 'react-native-tts'
 import { StackNavigator,NavigationActions } from 'react-navigation';
 import HomeScreen from '../App';
 import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view';
@@ -68,19 +69,17 @@ export default class LessonDetail extends Component {
   }
   
   componentWillMount() {
-    let passedProps = this.props.navigation.state.params
-    console.log(passedProps.lesson)
-    let lesson = passedProps.lesson
+    let lesson = this.props.lesson
     let lessonTitle = null
     switch (lesson) {
       case '1':
-        lessonTitle = 'airplane'
+        lessonTitle = 'air plane'
         break
       case '2':
-        lessonTitle = 'apple'
+        lessonTitle = 'boat'
         break
       case '3':
-        lessonTitle = 'banana'
+        lessonTitle = 'bicycle'
         break
       case '4':
         lessonTitle = 'bear'
@@ -89,7 +88,7 @@ export default class LessonDetail extends Component {
         lessonTitle = 'bird'
         break
       case '6':
-        lessonTitle = 'book'
+        lessonTitle = 'dog'
         break
       case '7':
         lessonTitle = 'bus'
@@ -98,11 +97,70 @@ export default class LessonDetail extends Component {
         lessonTitle = 'car'
         break
       case '9':
-        lessonTitle = 'cake'
+        lessonTitle = 'motorcycle'
         break
       case '10':
         lessonTitle = 'cat'
         break
+      case '11':
+        lessonTitle = 'sheep'
+        break
+      case '12':
+        lessonTitle = 'zebra'
+        break
+      case '13':
+        lessonTitle = 'boat'
+        break
+      case '14':
+        lessonTitle = 'bicycle'
+        break
+      case '15':
+        lessonTitle = 'bus'
+        break
+      case '16':
+        lessonTitle = 'elephant'
+        break
+      case '17':
+        lessonTitle = 'giraffe'
+        break
+      case '18':
+        lessonTitle = 'horse'
+        break
+      case '19':
+        lessonTitle = 'traffic light'
+        break
+      case '20':
+        lessonTitle = 'stop sign'
+        break
+      case '21':
+        lessonTitle = 'parking meter'
+        break
+      case '22':
+        lessonTitle = 'bed'
+        break
+      case '23':
+        lessonTitle = 'sink'
+        break
+      case '24':
+        lessonTitle = 'potted plant'
+        break
+      case '25':
+        lessonTitle = 'chair'
+        break
+      case '26':
+        lessonTitle = 'couch'
+        break
+      case '27':
+        lessonTitle = 'bench'
+        break
+      case '28':
+        lessonTitle = 'apple'
+        break
+      case '29':
+        lessonTitle = 'orange'
+        break
+      case '30':
+        lessonTitle = 'banana'
     }
     console.log(lessonTitle)
     let firstPage = this.randomIntFromInterval(1, 10)
@@ -114,6 +172,7 @@ export default class LessonDetail extends Component {
       thirdPage: thirdPage,
       title: lessonTitle
     })
+    setTimeout(() => {Tts.speak(lessonTitle)}, 500)
     //console.log(images[passedProps.lesson][1])
   }
   
@@ -128,13 +187,16 @@ export default class LessonDetail extends Component {
   }
   
   renderPage1() {
-    let passedProps = this.props.navigation.state.params
     return(
-      <View style={{height: '100%', width: '100%', alignItems: 'center', justifyContent: 'center'}}>
-        <Image
-          resizeMode="contain"
-          style={styles.background}
-          source={images[passedProps.lesson][this.state.firstPage]}/>
+      <View style={{height: '100%', alignItems: 'center', justifyContent: 'center'}}>
+        <TouchableOpacity
+          onPress={() => Tts.speak(this.state.title)}
+          style={{height: '30%', width: '100%', alignItems: 'center', justifyContent: 'center'}}>
+          <Image
+            resizeMode="contain"
+            style={styles.backgroundImage}
+            source={images[this.props.lesson][this.state.firstPage]}/>
+        </TouchableOpacity>
         <Text style={{backgroundColor: 'transparent', color: 'white',
           fontSize: 50, position: 'absolute',
           fontWeight: 'bold', bottom: 20, alignSelf: 'center'}}>{this.state.title}</Text>
@@ -143,13 +205,16 @@ export default class LessonDetail extends Component {
   }
   
   renderPage2() {
-    let passedProps = this.props.navigation.state.params
     return(
-      <View style={{height: '100%', width: '100%', alignItems: 'center', justifyContent: 'center'}}>
-        <Image
-          resizeMode="contain"
-          style={styles.background}
-          source={images[passedProps.lesson][this.state.secondPage]}/>
+      <View style={{height: '100%', alignItems: 'center', justifyContent: 'center'}}>
+        <TouchableOpacity
+          onPress={() => Tts.speak(this.state.title)}
+          style={{height: '30%', width: '100%', alignItems: 'center', justifyContent: 'center'}}>
+          <Image
+            resizeMode="contain"
+            style={styles.backgroundImage}
+            source={images[this.props.lesson][this.state.secondPage]}/>
+        </TouchableOpacity>
         <Text style={{backgroundColor: 'transparent', color: 'white',
           fontSize: 50, position: 'absolute',
           fontWeight: 'bold', bottom: 20, alignSelf: 'center'}}>{this.state.title}</Text>
@@ -158,29 +223,32 @@ export default class LessonDetail extends Component {
   }
   
   renderPage3() {
-    let passedProps = this.props.navigation.state.params
     return(
-      <View style={{height: '100%', width: '100%', alignItems: 'center', justifyContent: 'center'}}>
+      <View style={{height: '100%', alignItems: 'center', justifyContent: 'center'}}>
         <TouchableOpacity
-          style={{position: 'absolute', top: 20, zIndex: 10}}
+          style={{position: 'absolute', top: 20, zIndex: 10, right: 10, width: 30, height: 30}}
           onPress={() => this.props.navigation.navigate('Lessons')}>
           <Image
-            style={{}}
+            resizeMode="contain"
+            style={{width: 30, height: 30}}
             source={require('../images/button-home.png')}/>
         </TouchableOpacity>
-        <Image
-          resizeMode="contain"
-          style={styles.background}
-          source={images[passedProps.lesson][this.state.thirdPage]}/>
+        <TouchableOpacity
+          onPress={() => Tts.speak(this.state.title)}
+          style={{height: '30%', width: '100%', alignItems: 'center', justifyContent: 'center'}}>
+          <Image
+            resizeMode="contain"
+            style={styles.backgroundImage}
+            source={images[this.props.lesson][this.state.thirdPage]}/>
+        </TouchableOpacity>
         <Text style={{backgroundColor: 'transparent', color: 'white',
-          fontSize: 50, position: 'absolute',
-          fontWeight: 'bold', bottom: 20, alignSelf: 'center'}}>{this.state.title}</Text>
+            fontSize: 50, position: 'absolute',
+            fontWeight: 'bold', bottom: 20, alignSelf: 'center'}}>{this.state.title}</Text>
       </View>
     )
   }
   
   render() {
-    let passedProps = this.props.navigation.state.params
     return(
       <View>
         <Image
@@ -209,5 +277,10 @@ const styles = StyleSheet.create({
     height,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  backgroundImage: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: width - 20
   }
 })

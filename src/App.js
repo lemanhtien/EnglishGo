@@ -12,10 +12,13 @@ import {
   TouchableOpacity
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import Tts from 'react-native-tts'
 import Lessons from './component/Lessons';
 import Exams from './component/Exams';
 import LessonTitle from './component/LessonTitle'
 import LessonDetail from './component/LessonDetail'
+import Multisensory from './component/Multisensory'
+import LessonArray from './component/LessonArray'
 // const store = createStore();
 const { width, height } = Dimensions.get("window");
 
@@ -23,6 +26,10 @@ export default class HomeScreen extends Component {
   static navigationOptions = {
     header: null
   };
+  
+  componentDidMount() {
+    //Tts.speak('air plane')
+  }
 
   render() {
     const { navigate } = this.props.navigation;
@@ -57,8 +64,9 @@ const EnglishGo = StackNavigator({
   Lessons: { screen: Lessons },
   Exams: { screen: Exams },
   LessonTitle: {screen: LessonTitle},
+  Multisensory: {screen: Multisensory},
   LessonDetail: {
-    screen: LessonDetail,
+    screen: LessonArray,
     gesturesEnabled: false
   }
 });

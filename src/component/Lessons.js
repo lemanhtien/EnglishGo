@@ -23,8 +23,9 @@ export default class Lessons extends Component {
   static navigationOptions = {
     header:null,
     title: 'Lesson',
+    gesturesEnabled: false
   };
-  
+
   renderPage1() {
     return (
       <View style={{overflow: 'visible', paddingLeft: 7}}>
@@ -40,7 +41,7 @@ export default class Lessons extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '2'})}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '4'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -49,7 +50,7 @@ export default class Lessons extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '3'})}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '7'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -58,7 +59,7 @@ export default class Lessons extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '4'})}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '10'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -73,7 +74,7 @@ export default class Lessons extends Component {
           width: '100%', marginLeft: 2, paddingLeft: 8, paddingRight: 8}}>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '5'})}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '13'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -82,7 +83,7 @@ export default class Lessons extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '6'})}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '16'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -91,7 +92,7 @@ export default class Lessons extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '7'})}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '19'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -100,7 +101,7 @@ export default class Lessons extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '8'})}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '22'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -111,14 +112,14 @@ export default class Lessons extends Component {
       </View>
     )
   }
-  
+
   renderPage2() {
     return (
       <View style={{overflow: 'visible', paddingLeft: 7}}>
         <View style={{height: '45%', flexDirection: 'row', justifyContent: 'space-between', width: '100%'}}>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '9'})}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '25'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -127,7 +128,7 @@ export default class Lessons extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '10'})}>
+            onPress={() => this.props.navigation.navigate('LessonTitle', {lesson: '28'})}>
             <Image
               style={{}}
               source={require('../images/button-level-lessons.png')}>
@@ -152,8 +153,8 @@ export default class Lessons extends Component {
       </View>
     )
   }
-  
-  
+
+
   render() {
     const { navigate } = this.props.navigation;
     return (
@@ -176,17 +177,17 @@ export default class Lessons extends Component {
                   {this.renderPage2()}
                 </ScrollableTabView>
               </View>
-              <View style={{height: '20%', marginLeft: 10}}>
+              <View style={{height: '20%', alignSelf: 'center'}}>
                 <TouchableOpacity
                   style={{height: '100%', width: '30%'}}
-                  onPress={() => this.props.navigation.goBack()}>
+                  onPress={() => this.props.navigation.navigate('Home')}>
                   <Image
                     style={{}}
                     source={require('../images/button-home.png')}/>
                 </TouchableOpacity>
               </View>
             </Image>
-  
+
           </View>
         </Image>
       </View>
@@ -204,7 +205,7 @@ const styles = StyleSheet.create({
     height,
   },
   wrapper: {
-    paddingTop: 20,
+    paddingTop: 50,
     padding: 10,
     backgroundColor:'transparent'
   },
